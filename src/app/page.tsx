@@ -11,10 +11,12 @@ type CardItem = {
   people: number;
   comments: number;
   files: number;
-  image?: boolean;
-  imageTwo?: boolean;
   showcase?: boolean;
   floated?: boolean;
+  image?: boolean;          // single image
+  imageSrc?: string;        // path in /public
+  imageTwo?: boolean;       // two images
+  images?: string[];        // paths in /public
 };
 
 type ColumnKey = 'todo' | 'progress' | 'done';
@@ -26,11 +28,11 @@ const initialData: Record<ColumnKey, CardItem[]> = {
     { id: 'card-wire', tag:{label:'High', bg:'tagHigh', text:'tagHighText'}, title:'Wireframes', desc:'Low fidelity wireframes include the most basic content and visuals.', people:0, comments:12, files:1 },
   ],
   progress: [
-    { id: 'card-onboard', tag:{label:'Low', bg:'tagLow', text:'tagLowText'}, title:'Onboarding Illustrations', people:3, comments:14, files:15, image:true },
-    { id: 'card-mood', tag:{label:'Low', bg:'tagLow', text:'tagLowText'}, title:'Moodboard', people:1, comments:9, files:10, imageTwo:true },
+    { id: 'card-onboard', tag:{label:'Low', bg:'tagLow', text:'tagLowText'}, title:'Onboarding Illustrations', people:3, comments:14, files:15, image:true, imageSrc: '/onboarding.jpg' },
+    { id: 'card-mood', tag:{label:'Low', bg:'tagLow', text:'tagLowText'}, title:'Moodboard', people:1, comments:9, files:10, imageTwo:true, images: ['/moodboard1.jpg','/moodboard2.jpg'] },
   ],
   done: [
-    { id: 'card-design', tag:{label:'Completed', bg:'tagGreen', text:'tagGreenText'}, title:'Mobile App Design', people:2, comments:12, files:15, showcase:true },
+    { id: 'card-design', tag:{label:'Completed', bg:'tagGreen', text:'tagGreenText'}, title:'Mobile App Design', people:2, comments:12, files:15, image:true, imageSrc: '/mobileApp.jpg'},
     { id: 'card-system', tag:{label:'Completed', bg:'tagGreen', text:'tagGreenText'}, title:'Design System', desc:'It just needs to adapt the UI from what you did before', people:4, comments:12, files:15 },
   ],
 };
@@ -142,7 +144,7 @@ function KanbanColumn({
 }
 
 function Card(props: CardItem) {
-  const { tag, title, desc, people, comments, files, image, imageTwo, showcase, floated } = props;
+  const { tag, title, desc, people, comments, files, image, imageTwo, images, imageSrc, showcase, floated } = props;
 
   return (
     <div className={`relative rounded-2xl  bg-white shadow-card p-5 ${floated ? "translate-y-6" : ""}`}>
@@ -155,13 +157,19 @@ function Card(props: CardItem) {
       <h4 className="mt-3 text-lg font-semibold text-slate11">{title}</h4>
       {desc && <p className="mt-2 text-sm leading-relaxed text-slate8">{desc}</p>}
 
-      {image && <div className="mt-4 aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate4" />}
-      {imageTwo && (
-        <div className="mt-4 grid grid-cols-2 gap-3">
-          <div className="aspect-[4/3] rounded-xl bg-slate4" />
-          <div className="aspect-[4/3] rounded-xl bg-slate4" />
-        </div>
-      )}
+      {image && imageSrc && (<img src={imageSrc} className="mt-4 aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate4" /> )}
+      {imageTwo && images && images.length >= 2 && (
+  <div className="mt-4 grid grid-cols-2 gap-3">
+    {images.slice(0, 2).map((src, idx) => (
+      <img
+        key={idx}
+        src={src}
+        alt={`${title} ${idx + 1}`}
+        className="aspect-[4/3] w-full rounded-xl object-cover"
+      />
+    ))}
+  </div>
+)}
       {showcase && <div className="mt-4 aspect-[16/9] rounded-xl bg-slate4" />}
 
       <div className="mt-4 flex items-center justify-between">
