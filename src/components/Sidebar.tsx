@@ -14,7 +14,7 @@ export default function Sidebar() {
   return (
     <aside className="w-[280px] h-screen bg-white border-r border-gray-200 px-5 py-6 flex flex-col">
       {/* Top: Project M. */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between w-64">
         <div className="flex items-center gap-3">
           <div className="h-8 w-8 rounded-full bg-violet-100 flex items-center justify-center">
             <div className="h-3 w-3 rounded-full bg-violet-500" />
