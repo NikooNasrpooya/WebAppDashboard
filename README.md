@@ -95,9 +95,8 @@ The **Web App Dashboard** is designed with a **modular and scalable architecture
 
 - **Layout.tsx** wraps all pages with **Sidebar** and **Topbar**.
 - Inside the layout, the **Dashboard Page** is rendered, containing widgets, charts, and other data visualizations.
-
 ---
 
 ## 📸 App Screenshot:
 
-_Add screenshots of the dashboard UI here for quick reference._
+<img src="./public/WebAppDashboard.png" alt="WebApp" width="500"/>
