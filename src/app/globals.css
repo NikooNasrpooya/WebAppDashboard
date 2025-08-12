@@ -1,15 +1,44 @@
 @import "tailwindcss";
-<<<<<<< HEAD
-@import "tailwindcss/preflight" */
-@tailwind utilities; */
+@import "tailwindcss/preflight" 
+@tailwind utilities;
 
-=======
->>>>>>> f520d91b223ab72a051435a0f41c5b7f73e59a91
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
+
+@theme {
+  /* Colors */
+  --color-ink: #0f1221;
+  --color-slate12: #0F172A;
+  --color-slate11: #1E293B;
+  --color-slate10: #334155;
+  --color-slate9:  #475569;
+  --color-slate8:  #64748B;
+  --color-slate7:  #94A3B8;
+  --color-slate6:  #CBD5E1;
+  --color-slate5:  #E2E8F0;
+  --color-slate4:  #EDF2F7;
+
+  --color-purpleBar: #7C5CFF;
+  --color-orangeBar: #F59E0B;
+  --color-greenBar:  #22C55E;
+
+  --color-tagGreen:      #E8F9EF;
+  --color-tagGreenText:  #1A7F46;
+  --color-tagLow:        #FFF4E5;
+  --color-tagLowText:    #B76A00;
+  --color-tagHigh:       #FFE7EA;
+  --color-tagHighText:   #B8153B;
+
+  /* Shadows (generates `shadow-card`) */
+  --shadow-card: 0 6px 20px rgba(2, 6, 23, 0.08);
+
+  /* Radii (generates `rounded-xl2`) */
+  --radius-xl2: 14px;
+}
+
 
 @theme inline {
   --color-background: var(--background);
@@ -30,7 +59,6 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-<<<<<<< HEAD
 .app-container {
   display: flex;
 }
@@ -51,5 +79,3 @@ body {
   gap: 20px;
   justify-content: center;
 }
-=======
->>>>>>> f520d91b223ab72a051435a0f41c5b7f73e59a91

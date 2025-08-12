@@ -15,6 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="flex-1 overflow-y-auto p-6">
             {children}
           </main>
+          
         </div>
       </body>
     </html>
