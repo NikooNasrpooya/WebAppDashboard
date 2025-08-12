@@ -3,6 +3,11 @@
 
 import { useState } from 'react';
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd';
+import Image from 'next/image';
+import { asset } from '@/lib/asset';
+
+
+
 type CardItem = {
   id: string;
   tag?: { label: string; bg: string; text: string };
@@ -157,13 +162,13 @@ function Card(props: CardItem) {
       <h4 className="mt-3 text-lg font-semibold text-slate11">{title}</h4>
       {desc && <p className="mt-2 text-sm leading-relaxed text-slate8">{desc}</p>}
 
-      {image && imageSrc && (<img src={imageSrc} className="mt-4 aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate4" /> )}
+      {image && imageSrc && (<img src={asset(imageSrc)}  className="mt-4 aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate4" /> )}
       {imageTwo && images && images.length >= 2 && (
   <div className="mt-4 grid grid-cols-2 gap-3">
     {images.slice(0, 2).map((src, idx) => (
       <img
         key={idx}
-        src={src}
+        src={asset(src)} 
         alt={`${title} ${idx + 1}`}
         className="aspect-[4/3] w-full rounded-xl object-cover"
       />
