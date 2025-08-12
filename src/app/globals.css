@@ -1,7 +1,10 @@
 @import "tailwindcss";
+<<<<<<< HEAD
 @import "tailwindcss/preflight" */
 @tailwind utilities; */
 
+=======
+>>>>>>> f520d91b223ab72a051435a0f41c5b7f73e59a91
 
 :root {
   --background: #ffffff;
@@ -27,6 +30,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+<<<<<<< HEAD
 .app-container {
   display: flex;
 }
@@ -47,3 +51,5 @@ body {
   gap: 20px;
   justify-content: center;
 }
+=======
+>>>>>>> f520d91b223ab72a051435a0f41c5b7f73e59a91

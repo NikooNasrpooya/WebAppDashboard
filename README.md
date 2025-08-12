@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Web App Dashboard
 
-## Getting Started
+## 📌 Overview
 
-First, run the development server:
+This project implements a **Web App Dashboard** using modern web development tools and best practices.  
+The dashboard is designed with a clean and responsive layout, following pixel-perfect UI guidelines.
+
+---
+
+## 🚀 Features
+
+- **Responsive Layout** – Works on desktop and mobile devices.
+- **Sidebar Navigation** – Organized navigation links for quick access.
+- **Topbar / Header** – Includes title, action buttons, and user profile section.
+- **Dashboard Widgets** – Displays key metrics and data cards.
+- **Pixel-perfect UI** – Styled to match the provided design specifications.
+
+---
+
+## 🛠️ Tech Stack
+
+- **React** – Frontend framework
+- **Next.js** – Routing and page management
+- **TypeScript** – Static typing for maintainable code
+- **Tailwind CSS** – Utility-first styling
+- **Heroicons** – Icons for UI elements
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/NikooNasrpooya/WebAppDashboard.git
+cd WebAppDashboard
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Your app will be running at **http://localhost:3000**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4️⃣ Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🧠 How It Works
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The **Web App Dashboard** is designed with a **modular and scalable architecture**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Layout System**
 
-## Deploy on Vercel
+   - A main layout file wraps all pages with a consistent **Sidebar** and **Topbar**.
+   - This ensures the navigation and header remain persistent across pages.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Sidebar Navigation**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   - Built with **flex and Tailwind utilities** for alignment.
+   - Uses **Heroicons** for icons.
+   - Links are mapped from an array to make it easy to add, remove, or reorder.
+
+3. **Topbar**
+
+   - Contains the page title, action buttons, and a user profile area.
+   - Styled to stay fixed at the top with shadow for separation.
+
+4. **Dashboard Widgets**
+
+   - Each widget is a **reusable component**.
+   - Accepts props for title, value, icon, and trend (e.g., up/down arrow).
+   - Designed with a **responsive grid** layout so they stack on smaller screens.
+
+5. **Styling**
+   - Fully styled with **Tailwind CSS** for quick iteration and consistency.
+   - **Custom colors** are defined in `tailwind.config.ts` to match the provided design.
+
+---
+
+**Flow:**
+
+- **Layout.tsx** wraps all pages with **Sidebar** and **Topbar**.
+- Inside the layout, the **Dashboard Page** is rendered, containing widgets, charts, and other data visualizations.
+
+---
+
+## 📸 App Screenshot:
+
+_Add screenshots of the dashboard UI here for quick reference._
