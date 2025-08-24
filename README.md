@@ -102,4 +102,4 @@ The **Web App Dashboard** is designed with a **modular and scalable architecture
 <img src="./public/WebAppDashboard.png" alt="WebApp" width="500"/>
 
 ## 📸 App Link:
-https://web-app-dashboard-git-main-nikoo-nasrpooyas-projects.vercel.app/
+https://web-app-dashboard.vercel.app/
