@@ -1,4 +1,4 @@
-name: Deploy Dashboard to GitHub Pages
+name: Deploy Next.js static to GitHub Pages
 
 on:
   push:
@@ -7,16 +7,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 20 }
+        with:
+          node-version: 20
       - run: npm ci
-
-      # Next.js export:
-      - run: GH=true npm run build
-      - run: GH=true npm run export
-      - run: cp out/index.html out/404.html
+      - run: GH=true npm run build            # ⬅️ build triggers the static export to out/
+      - run: test -f out/404.html || cp out/index.html out/404.html
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
