@@ -3,6 +3,8 @@
 
 import { useState } from 'react';
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd';
+
+
 type CardItem = {
   id: string;
   tag?: { label: string; bg: string; text: string };
@@ -38,6 +40,8 @@ const initialData: Record<ColumnKey, CardItem[]> = {
 };
 
 export default function Board() {
+  
+  const [h1, seth1] = useState("hello world");
   const [columns, setColumns] = useState(initialData);
 
   const onDragEnd = (result: DropResult) => {
